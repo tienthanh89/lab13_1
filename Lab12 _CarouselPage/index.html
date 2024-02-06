@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- bootstrap core css -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <title>Carousel Page</title>
+  </head>
+  <body>
+    <!-- header -->
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <div class="container-fluid">
+          <!-- navbar-brand có thể là 1 brand-link, brand-ảnh, brand-text hoặc brand-ảnh + link -->
+          <!-- <img src="img/react.svg" width="50px" alt="" class="navbar-brand" /> -->
+          <a href="#" class="navbar-brand"> Carousel </a>
+          <!-- <img src="img/react.svg" alt="" class="navbar-brand" width="50px" /> -->
+          <!-- <p class="navbar-brand">ABC</p> -->
+
+          <!-- toggle button xuất hiện khi màn hình dưới kích thước thiết lập bởi .navbar-expand, khi bấm vào nó nó sẽ mở rộng Navbar đổ xuống để xuất hiện các thành phần bị ẩn.-->
+          <!-- data-bs-target sẽ có giá trị là id của phần tử chứa các phần nội dung trên navbar -->
+          <button
+            class="navbar-toggle d-md-none"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarCollapse"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- nav item -->
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+              <li class="nav-item">
+                <a href="#" class="nav-link active">Home</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">Link</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link disable" tabindex="-1">Disabled</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- carousel: gồm 3 phần: div ngoài cùng, Wrapper for slides, indicator, left and right control -->
+    <!-- div ngoài cùng:
+            carousel: mô tả thẻ này chứa 1 carousel
+           slide: tạo hiệu ứng chuyển động kh qua ảnh mới
+            data-bs-ride="carousel": auto next -->
+    <!-- Wrapper for slides: carousel-inner
+            carousel-item: định nghĩa nội dung của mỗi slide
+            active: ảnh nào hiện đầu tiên
+            bg-img1: background của khu vực inner -->
+    <!-- carousel-indicators:
+          button:
+            class: active
+            type: button
+            data-bs-target:#id
+            data-bs-slide-to:0...
+            aria-label-->
+    <!-- left, right control: carousel-control-next/prev 
+            kết hợp với button
+              type: button
+              data-bs-target="#myCarousel"
+              data-bs-slide="next"
+    -->
+
+    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active bg-img1">
+          <div class="container">
+            <div class="carousel-caption text-start">
+              <h1>Example headline</h1>
+              <p>
+                Some representative placeholder content for the first slide of
+                the carousel
+              </p>
+              <p>
+                <a class="btn btn-lg btn-primary" href="#">Sign up today</a>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item bg-img2">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Another example headline</h1>
+              <p>
+                Some representative placeholder content for the second slide of
+                the carousel
+              </p>
+              <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item bg-img3">
+          <div class="container">
+            <div class="carousel-caption text-end">
+              <h1>one more for good measure</h1>
+              <p>
+                Some representative placeholder content for the third slide of
+                the carousel
+              </p>
+              <p>
+                <a class="btn btn-lg btn-primary" href="#">Browse gallery</a>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-indicators">
+          <button
+            class="active"
+            type="button"
+            data-bs-target="#myCarousel"
+            data-bs-slide-to="0"
+            aria-label="Slide 1"
+            aria-current="true"
+          ></button>
+
+          <button
+            type="button"
+            data-bs-target="#myCarousel"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+            class=""
+          ></button>
+
+          <button
+            type="button"
+            data-bs-target="#myCarousel"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+            class=""
+          ></button>
+        </div>
+
+        <!-- next, prev -->
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#myCarousel"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#myCarousel"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <footer class="p-5">
+      <div class="container-fluid d-flex justify-content-between">
+        <div class="d-flex">
+          <p class="lead">&copy; 2017 - 2021 2021 Company, Inc.</p>
+          <ul class="d-flex lead">
+            <li>
+              <a href="#">Private</a>
+            </li>
+            <li class="mx-5">
+              <a href="#">Terms</a>
+            </li>
+          </ul>
+        </div>
+        <a href="#" class="lead">Back to top</a>
+      </div>
+    </footer>
+
+    <!-- javascript bundle with popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
